@@ -1,0 +1,18 @@
+.gallery{
+    background-color: #dbddf1;
+    padding:80px 0;
+}
+img{
+    width: 100%
+}
+
+.gallery img{
+    background-color: #ffffff;
+    padding:15px;
+    width:100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.moveRight{
+    float:right;
+}
