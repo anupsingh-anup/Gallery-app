@@ -34,13 +34,10 @@ function SearchPage() {
     unsplash.search
       .photos(search,page)
       .then(toJson)
-      // .then((result)=>console.log(result))
       .then((json) => {
         setPhoto(json.results);
         setTotalItems(json.total_pages);
-        console.log(json);
         setData(json.total === 0?true:false)
-        // console.log(false)
       });
   }
 
@@ -50,21 +47,9 @@ function SearchPage() {
     splashToGetPhotos(query,currentPage);
   };
 
-  // useEffect(() => {
-  //   console.log("useffect1");
-  //   const param1 = new URL(window.location.href).searchParams.get("query");
-  //   const param2 = new URL(window.location.href).searchParams.get("page");
-  //   if (param1) console.log(param1,param2);
-  // }, [params]);
-
-  
-
   useEffect(() => {
     const path = location.pathname;
-    const param1 = new URL(window.location.href).searchParams.get("query");
-    const param2 = new URL(window.location.href).searchParams.get("page");
-    console.log(param1,param2);
-     if(path === "/search"){
+     if(path === "/"){
     unsplash.search
     .photos(0)
     .then(toJson)
