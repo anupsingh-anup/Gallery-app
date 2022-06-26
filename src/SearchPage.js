@@ -3,7 +3,6 @@ import Unsplash, { toJson } from "unsplash-js";
 import { useLocation, useNavigate, useParams,Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "./styles.css";
-import PaginationComponent from './PaginationComponent';
 import MyPagination from "./MyPagination";
 
 const unsplash = new Unsplash({
