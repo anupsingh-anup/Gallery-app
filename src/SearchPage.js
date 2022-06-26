@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from "react";
 import Unsplash, { toJson } from "unsplash-js";
 import { useLocation, useNavigate, useParams,Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import "./styles.css";
 import PaginationComponent from './PaginationComponent';
+import MyPagination from "./MyPagination";
 
 const unsplash = new Unsplash({
   accessKey: "omh_u5jyNWVO8CvU4hpvLkt_GwwKMZ7oZpILzVJm7Ss",
@@ -113,10 +115,14 @@ function SearchPage() {
           })}
         </div></div></section>
         {data?<div ></div>:
-    <PaginationComponent  total={totalItems}
-                    itemsPerPage={10}
-                    currentPage={currentPage}
-                    onPageChange={(page) => setCurrentPage(page)}/>}</>)
+        <Container>
+     <MyPagination
+     itemsCount={totalItems}
+     itemsPerPage={10}
+     currentPage={currentPage}
+     setCurrentPage={setCurrentPage}
+     alwaysShown={false}
+   /></Container>}</>)
         
 }
 
